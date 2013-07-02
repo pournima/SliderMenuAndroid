@@ -1,0 +1,114 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:panel="http://schemas.android.com/apk/res/com.slidingdemo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity" >
+
+        <com.slidingdemo.Panel
+            android:id="@+id/topPanel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="4dip"
+            panel:animationDuration="1000"
+            panel:closedHandle="@drawable/top_switcher_collapsed_background"
+            panel:content="@+id/panelContent"
+            panel:handle="@+id/panelHandle"
+            panel:linearFlying="true"
+            panel:openedHandle="@drawable/top_switcher_expanded_background"
+            panel:position="top" >
+
+            <Button
+                android:id="@+id/panelHandle"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="33dip" />
+
+            <LinearLayout
+                android:id="@+id/panelContent"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <CheckBox
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dip"
+                    android:background="#688"
+                    android:gravity="center"
+                    android:text="top check box" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#323299"
+                    android:gravity="center"
+                    android:padding="4dip"
+                    android:text="Bounce\nInterpolator"
+                    android:textColor="#eee"
+                    android:textSize="16dip"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </com.slidingdemo.Panel>
+        
+        <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        android:layout_marginTop="35dp" >
+
+    <LinearLayout
+        android:id="@+id/tabBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/BtnSlide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="0px"
+            android:contentDescription="@id/BtnSlide"
+            android:onClick="onSlideBtnClick"
+            android:padding="0px"
+            android:src="@drawable/ic_launcher" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/hello_world" />
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/email_or_user_name"
+        android:inputType="textEmailAddress" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onLoginButtonClick"
+        android:text="@string/login" />
+    </LinearLayout>
+
+</FrameLayout>
